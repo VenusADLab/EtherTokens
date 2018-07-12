@@ -20,7 +20,7 @@ function Collect(uint _am)
 
 ```
 
-There exists a reentrancy vulnerability in above function `Collect()`. An attacker could use this vulnerability to stole all the ETH from the smart contract.
+There exists a reentrancy vulnerability in above function `Collect()`. An attacker could use this vulnerability to stole all of the ETH remains in this smart contract.
 
 Statement `balances[msg.sender]-=_am;` is at the behind of `call.value()`, which is the root cause of this vulnerability. Instead a development method called `check-effects-interactions` should be implemented.
 
